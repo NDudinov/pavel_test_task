@@ -28,12 +28,10 @@ jobs:
         curl -sSL https://install.python-poetry.org | python3 -
         export PATH="$HOME/.poetry/bin:$PATH"
         poetry install
-    - name: Lint with ruff & black
-      run: |
-        # stop the build if there are Python PEP 8 problems
-        black --check .
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        ruff check .
+    - name: Check Ruff
+      run: ruff check .
+    - name: Format with Black
+      run: black --check .
     - name: Test with pytest
       run: |
         pytest

@@ -2,7 +2,7 @@ from typing import Optional
 
 import allure
 import requests
-from hamcrest import equal_to, assert_that, greater_than_or_equal_to, not_none
+from hamcrest import assert_that, equal_to, greater_than_or_equal_to, not_none
 from requests import Response
 
 from utils.api_const import ApiConst
