@@ -29,8 +29,6 @@ jobs:
         export PATH="$HOME/.poetry/bin:$PATH"
         poetry shell
         poetry install
-      with:
-        options: "--check --verbose"
     - name: Lint with ruff & black
       run: |
         # stop the build if there are Python PEP 8 problems
