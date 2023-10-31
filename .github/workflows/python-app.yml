@@ -29,7 +29,6 @@ jobs:
         export PATH="$HOME/.poetry/bin:$PATH"
         poetry shell
         poetry install
-    - uses: psf/black@stable
       with:
         options: "--check --verbose"
     - name: Lint with ruff & black
