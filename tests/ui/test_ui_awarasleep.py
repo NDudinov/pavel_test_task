@@ -1,4 +1,3 @@
-
 import allure
 import pytest
 
@@ -7,7 +6,6 @@ from page.awara.awara_main_page import AwaraMainPage
 
 @pytest.mark.ui_test
 class TestUIAwarasleep:
-
     @allure.testcase("UI Test")
     def test_ui_awara(self, page) -> None:
         with allure.step(

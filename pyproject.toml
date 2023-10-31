@@ -32,3 +32,22 @@ addopts = [
     "--alluredir=allure-results"
 ]
 testpaths = ["tests"]
+
+[tool.ruff.lint]
+select = [
+  # pycodestyle
+  "E",
+  # Pyflakes
+  "F",
+  # pyupgrade
+  "UP",
+  # flake8-bugbear
+  "B",
+  # flake8-simplify
+  "SIM",
+  # isort
+  "I",
+]
+
+[tool.black]
+target-version = ["py38", "py39", "py310", "py311"]
