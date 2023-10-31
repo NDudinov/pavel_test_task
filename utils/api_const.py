@@ -1,5 +1,3 @@
-
-
 class ApiConst:
     API_URL = "https://reqres.in/api"
     USERS_ENDPOINT = "/users"

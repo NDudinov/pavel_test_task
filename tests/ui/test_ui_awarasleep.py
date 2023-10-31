@@ -1,15 +1,28 @@
-import re
-from playwright.sync_api import Page, expect
 
+import allure
+import pytest
+
+from page.awara.awara_main_page import AwaraMainPage
+
+
+@pytest.mark.ui_test
 class TestUIAwarasleep:
-    def test_ui_awara(self, page: Page) -> None:
-        url = 'https://qa.awarasleep.com'
-        page.goto(url)
-        expect(page).to_have_title(re.compile("Awara"))
-        hero_shop = page.locator("//*[@data-testid='hero_shop_mattress']")
-        hero_shop.click()
-        expect(page).to_have_url(re.compile(f"{url}/mattress"))
-        add_to_cart_button = page.locator("//*[@data-testid='addtocart_btn']")
-        add_to_cart_button.click()
-        cart = page.locator("//*[@data-testid='cart_items_area']", has=page.get_by_text("Awara Latex Hybrid Mattress "))
-        expect(cart).to_be_visible()
+
+    @allure.testcase("UI Test")
+    def test_ui_awara(self, page) -> None:
+        with allure.step(
+            "1. Open https://qa.awarasleep.com/ -> check the page is opened"
+        ):
+            main_page = AwaraMainPage(page)
+            main_page.open()
+            main_page.check_title()
+        with allure.step(
+            "2. Click the “Shop & Save” button on the Hero Banner -> check you are on /mattress"
+        ):
+            matress_page = main_page.click_hero_shop()
+            matress_page.check_url()
+        with allure.step(
+            "3. Add the mattress to the cart -> Check the mattress has been added to the cart"
+        ):
+            checkout_page = matress_page.click_add_to_cart()
+            checkout_page.check_item_in_cart("Awara Latex Hybrid Mattress ")

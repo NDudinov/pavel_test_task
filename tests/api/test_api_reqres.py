@@ -7,6 +7,7 @@ from utils import api_const, http_methods, user_creator
 
 @pytest.mark.api_test
 class TestApiReqressCrud:
+    @allure.testcase("API Test")
     def test_api_crud_regres_in(self) -> None:
         new_user = user_creator.create_user_json()
         with allure.step("1. Create a User"):
