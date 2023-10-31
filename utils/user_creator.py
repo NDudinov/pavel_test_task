@@ -2,7 +2,6 @@ from faker import Faker
 
 
 class UserCreator:
-
     __faker = Faker()
 
     @classmethod

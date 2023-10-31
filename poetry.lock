@@ -357,6 +357,16 @@ files = [
 ]
 
 [[package]]
+name = "page"
+version = "0.2"
+description = "Static website generator"
+optional = false
+python-versions = "*"
+files = [
+    {file = "page-0.2.tar.gz", hash = "sha256:caa79dbefe8a3db9f375480be44d989ed6fcee18a8bf03d668f2390f8a8cd703"},
+]
+
+[[package]]
 name = "pathspec"
 version = "0.11.2"
 description = "Utility library for gitignore style pattern matching of file paths."
@@ -634,4 +644,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "c1e2cb7fdab0965f3a84bded78170c74352cf986273770e2e93894156122bab0"
+content-hash = "d0531cdc96d1e6150f40833012195f5523f421db4ff9e54c0841fdc91b890f78"

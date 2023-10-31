@@ -12,7 +12,6 @@ from utils.http_methods import HTTPMethods
 class ReqressCrud:
     _users_endpoint = ApiConst.API_URL + ApiConst.USERS_ENDPOINT
 
-
     @classmethod
     @allure.step(f"Send POST request to {_users_endpoint} to create new user")
     def create_user(cls, new_user_data: dict[str, str]) -> Response:
@@ -27,7 +26,7 @@ class ReqressCrud:
     @classmethod
     @allure.step(f"Send PUT request to {_users_endpoint} to update user")
     def update_user_via_put(
-            cls, new_data: dict[str, str], user_id: int = 2
+        cls, new_data: dict[str, str], user_id: int = 2
     ) -> Response:
         with allure.step(f"User ID to update: {user_id}"):
             return requests.put(f"{cls._users_endpoint}/{user_id}", json=new_data)
@@ -35,7 +34,7 @@ class ReqressCrud:
     @classmethod
     @allure.step(f"Send PATCH request to {_users_endpoint} to update user")
     def update_user_via_patch(
-            cls, new_data: dict[str, str], user_id: int = 2
+        cls, new_data: dict[str, str], user_id: int = 2
     ) -> Response:
         with allure.step(f"User ID to update: {user_id}"):
             return requests.patch(f"{cls._users_endpoint}/{user_id}", json=new_data)
@@ -58,11 +57,13 @@ class ReqressCrud:
     @staticmethod
     @allure.step("Check expected is part of actual response body")
     def check_response_body(
-            method: HTTPMethods,
-            response: Response,
-            expected_body: Optional[dict[str, str | int]],
+        method: HTTPMethods,
+        response: Response,
+        expected_body: Optional[dict[str, str | int]],
     ) -> None:
-        actual_body = response.json() if method is not HTTPMethods.DELETE else response.content
+        actual_body = (
+            response.json() if method is not HTTPMethods.DELETE else response.content
+        )
         match method:
             case HTTPMethods.GET:
                 assert_that(
@@ -110,7 +111,7 @@ class ReqressCrud:
                 )
             case HTTPMethods.DELETE:
                 assert_that(
-                    actual_body, equal_to(b''), "Response body for DELETE is present"
+                    actual_body, equal_to(b""), "Response body for DELETE is present"
                 )
             case _:
                 raise NotImplementedError
