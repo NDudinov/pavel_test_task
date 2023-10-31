@@ -1,5 +1,5 @@
-from .regress_crud import RegressCrud as regress_crud
+from .reqress_crud import ReqressCrud as reqress_crud
 
 __all__ = [
-    "regress_crud",
+    "reqress_crud",
 ]

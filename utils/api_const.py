@@ -2,9 +2,8 @@ from enum import Enum
 
 
 class ApiConst:
-    API_URL = "https://regres.in/api"
+    API_URL = "https://reqres.in/api"
     USERS_ENDPOINT = "/users"
-    REGISTER_USER_ENDPOINT = "/register"
     USER = {
         "data": {
             "id": 2,

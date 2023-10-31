@@ -7,4 +7,4 @@ class UserCreator:
 
     @classmethod
     def create_user_json(cls) -> dict:
-        return {"name": cls.__faker.name(), "email": cls.__faker.email(), "password": cls.__faker.password()}
+        return {"name": cls.__faker.name(), "job": cls.__faker.job()}
