@@ -30,6 +30,7 @@ markers = [
 addopts = [
     "--clean-alluredir",
     "--alluredir=allure-results",
+    "-v"
 ]
 testpaths = [
     "tests/api",

@@ -45,7 +45,7 @@ jobs:
           path: allure-results
           retention-days: 3
 
-    - name: Get Allure history
+    - name: Load test report history
       uses: actions/checkout@v2
       if: always()
       continue-on-error: true
@@ -53,7 +53,7 @@ jobs:
         ref: gh-pages
         path: gh-pages
 
-    - name: Allure Report action from marketplace
+    - name: Build test report
       uses: simple-elf/allure-report-action@master
       if: always()
       id: allure-report
@@ -64,7 +64,7 @@ jobs:
         allure_history: allure-history
         keep_reports: 20
 
-    - name: Deploy report to Github Pages
+    - name: Publish
       if: always()
       uses: peaceiris/actions-gh-pages@v2
       env:
