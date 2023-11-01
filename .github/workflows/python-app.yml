@@ -37,7 +37,6 @@ jobs:
 
     - name: Test with pytest
       run: |
-        cd tests
         poetry run pytest --headless=True
     - uses: actions/upload-artifact@master
       with:
