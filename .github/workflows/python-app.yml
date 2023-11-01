@@ -31,7 +31,7 @@ jobs:
         poetry run playwright install
     - name: Check Ruff
       run: poetry run ruff check .
-    - name: Format with Black
+    - name: Check Black
       run: poetry run black --check .
     - name: Test with pytest
       run: |
