@@ -35,4 +35,5 @@ jobs:
       run: poetry run black --check .
     - name: Test with pytest
       run: |
-        poetry run pytest --headless
+        cd tests
+        poetry run pytest --headless=True
