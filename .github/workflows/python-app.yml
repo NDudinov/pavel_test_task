@@ -37,3 +37,7 @@ jobs:
       run: |
         cd tests
         poetry run pytest --headless=True
+    - name: Generate allure report
+      run: |
+        allure serve allure-reports
+        allure generate --single-file allure-results
