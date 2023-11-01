@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Nov 01 17:59:18 GMT 2023","Wed Nov 01 17:59:19 GMT 2023","1465","tests.api","test_api_reqres","TestApiReqressCrud","","","test_api_crud_regres_in",""
+"passed","Wed Nov 01 17:59:20 GMT 2023","Wed Nov 01 17:59:24 GMT 2023","3908","tests.ui","test_ui_awarasleep","TestUIAwarasleep","","","test_ui_awara",""
