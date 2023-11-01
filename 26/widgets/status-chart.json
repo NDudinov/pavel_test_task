@@ -1,0 +1,1 @@
+[{"uid":"b174af514830a943","name":"test_ui_awara","time":{"start":1698865542665,"stop":1698865545950,"duration":3285},"status":"passed","severity":"normal"},{"uid":"73dffd29375a0689","name":"test_api_crud_regres_in","time":{"start":1698865539382,"stop":1698865540635,"duration":1253},"status":"passed","severity":"normal"}]
