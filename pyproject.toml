@@ -29,9 +29,12 @@ markers = [
 ]
 addopts = [
     "--clean-alluredir",
-    "--alluredir=allure-results"
+    "--alluredir=allure-results",
 ]
-testpaths = ["tests"]
+testpaths = [
+    "tests/api",
+    "tests/ui",
+]
 
 [tool.ruff.lint]
 select = [
